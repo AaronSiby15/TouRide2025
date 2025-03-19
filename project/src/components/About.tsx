@@ -1,10 +1,10 @@
-import React from 'react';
+// import React from 'react';
 import { Mail, Phone, Award, BookOpen, ClipboardList, Star } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 
 const About = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     return (
         <div className="bg-gray-50 min-h-screen p-6">
