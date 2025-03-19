@@ -10,7 +10,7 @@ const About = () => {
         <div className="bg-gray-50 min-h-screen p-6">
             <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg p-8">
                 <h1 className="text-4xl font-extrabold text-blue-600 text-center mb-6">About TouRide</h1>
-                
+
                 {/* Introduction */}
                 <section className="mb-8 text-center">
                     <p className="text-lg text-gray-700">
@@ -20,7 +20,7 @@ const About = () => {
                         ensuring drivers gain the confidence and knowledge needed to navigate Ontario's roads safely and legally.
                     </p>
                 </section>
-                
+
                 {/* How It Works */}
                 <section className="mb-8">
                     <h2 className="text-2xl font-semibold text-gray-800 mb-4">How It Works</h2>
