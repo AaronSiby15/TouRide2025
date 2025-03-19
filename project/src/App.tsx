@@ -66,7 +66,7 @@ function App() {
                   <div className="absolute bottom-8 right-8">
                     <a
                       href="/dashboard"
-                      className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow"
+                      className="bg-white hover:bg-blue-700 text-black hover:text-white font-semibold py-2 px-4 rounded shadow"
                     >
                       Learn More
                     </a>
