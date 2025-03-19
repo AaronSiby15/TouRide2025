@@ -1,10 +1,14 @@
-import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Car, LogOut, Trophy } from 'lucide-react';
 import { supabase, checkIsAdmin } from '../lib/supabase';
 import { useEffect, useState } from 'react';
+import { Session } from '@supabase/supabase-js';
 
-export default function Navbar({ session }) {
+interface NavbarProps {
+  session: Session | null; // The user session from Supabase
+}
+
+export default function Navbar({ session }: NavbarProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const [isAdmin, setIsAdmin] = useState(false);
@@ -33,9 +37,8 @@ export default function Navbar({ session }) {
           <div className="flex items-center space-x-4">
             <Link
               to="/about"
-              className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium ${
-                location.pathname === '/about' ? 'bg-gray-100' : ''
-              }`}
+              className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium ${location.pathname === '/about' ? 'bg-gray-100' : ''
+                }`}
             >
               About
             </Link>
@@ -44,9 +47,8 @@ export default function Navbar({ session }) {
             {session && (
               <Link
                 to="/dashboard"
-                className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium ${
-                  location.pathname === '/dashboard' ? 'bg-gray-100' : ''
-                }`}
+                className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium ${location.pathname === '/dashboard' ? 'bg-gray-100' : ''
+                  }`}
               >
                 Course Content
               </Link>
@@ -69,29 +71,37 @@ export default function Navbar({ session }) {
               </>
             ) : (
               <div className="flex items-center space-x-4">
-                <Link
+
+                {/* <Link
                   to="/dashboard"
-                  className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium ${
-                    location.pathname === '/dashboard' ? 'bg-gray-100' : ''
-                  }`}
+                  className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium ${location.pathname === '/dashboard' ? 'bg-gray-100' : ''
+                    }`}
                 >
                   Dashboard
-                </Link>
+                </Link> */}
+
                 <Link
                   to="/completion"
-                  className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium flex items-center ${
-                    location.pathname === '/completion' ? 'bg-gray-100' : ''
-                  }`}
+                  className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium flex items-center ${location.pathname === '/completion' ? 'bg-gray-100' : ''
+                    }`}
                 >
                   <Trophy className="h-5 w-5 mr-1" />
                   Progress
                 </Link>
+
+                <Link
+                  to="/payment"
+                  className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium ${location.pathname === '/payment' ? 'bg-gray-100' : ''
+                    }`}
+                >
+                  Payment
+                </Link>
+
                 {isAdmin && (
                   <Link
                     to="/admin"
-                    className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium ${
-                      location.pathname === '/admin' ? 'bg-gray-100' : ''
-                    }`}
+                    className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium ${location.pathname === '/admin' ? 'bg-gray-100' : ''
+                      }`}
                   >
                     Admin
                   </Link>
