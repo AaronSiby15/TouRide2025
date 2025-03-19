@@ -35,13 +35,14 @@ export default function Navbar({ session }: NavbarProps) {
             </Link>
           </div>
           <div className="flex items-center space-x-4">
-            <Link
+
+            {/* <Link
               to="/about"
               className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium ${location.pathname === '/about' ? 'bg-gray-100' : ''
                 }`}
             >
               About
-            </Link>
+            </Link> */}
 
             {/* Back to Dashboard button (now styled consistently) */}
             {session && (
