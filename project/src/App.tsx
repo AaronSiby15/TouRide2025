@@ -42,32 +42,39 @@ function App() {
             path="/"
             element={
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="text-center">
-                  <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                    Welcome to TouRide
-                  </h1>
-                  <p className="text-xl text-gray-600 mb-8">
-                    Learn Canadian driving rules and regulations easily
-                  </p>
+                {/* Hero Section */}
+                <div className="relative w-full h-[400px] mb-8">
                   <img
                     src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=80"
                     alt="Driving in Canada"
-                    className="rounded-lg shadow-xl mx-auto mb-8"
+                    className="w-full h-full object-cover rounded-lg shadow-2xl"
                   />
+
+                  <div className="absolute inset-0 bg-black bg-opacity-40 rounded-lg" />
+
+                  <div className="absolute top-1/2 left-6 transform -translate-y-1/2 text-white max-w-lg">
+                    <h1 className="text-3xl font-bold mb-2">Welcome to TouRide</h1>
+                    <p className="text-base mb-4">
+                      TouRide is an educational web-based course designed to help tourists,
+                      immigrants, and newcomers familiarize themselves with Ontario's traffic
+                      laws. Driving in a new country can be challenging with unfamiliar road
+                      signs. TouRide simplifies this process so you can navigate Ontario's roads
+                      safely and confidently.
+                    </p>
+                  </div>
+
+                  <div className="absolute bottom-8 right-8">
+                    <a
+                      href="/dashboard"
+                      className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow"
+                    >
+                      Learn More
+                    </a>
+                  </div>
                 </div>
+
                 <div className="bg-gray-50 min-h-screen p-6">
                   <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg p-8">
-                    <h1 className="text-4xl font-extrabold text-blue-600 text-center mb-6">About TouRide</h1>
-
-                    {/* Introduction */}
-                    <section className="mb-8 text-center">
-                      <p className="text-lg text-gray-700">
-                        TouRide is an educational web-based course designed to help tourists, immigrants, and newcomers
-                        familiarize themselves with Ontario's traffic laws. Driving in a new country or province can be
-                        challenging, especially with unfamiliar rules and road signs. TouRide simplifies this learning process,
-                        ensuring drivers gain the confidence and knowledge needed to navigate Ontario's roads safely and legally.
-                      </p>
-                    </section>
 
                     {/* How It Works */}
                     <section className="mb-8">
