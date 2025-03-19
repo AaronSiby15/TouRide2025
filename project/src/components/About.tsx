@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, Phone, Award, BookOpen, ClipboardList, Star } from 'lucide-react';
 
+
 const About = () => {
     return (
         <div className="bg-gray-50 min-h-screen p-6">

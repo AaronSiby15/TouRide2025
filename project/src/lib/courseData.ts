@@ -142,5 +142,110 @@ Key Topics:
         correctAnswer: 1
       }
     ]
+  },
+  {
+    id: "module-4",
+    title: "Highway & Lane Use Rules",
+    content: `Ontario Rule:
+- Left lane on highways is for passing only.
+- Slow-moving vehicles should stay in the right lane.
+
+Roundabouts:
+- Vehicles inside the roundabout have the right of way.
+- Always signal when exiting.`,
+    duration: 6,
+    quiz: [
+      {
+        question: "Where should slow-moving vehicles drive on highways?",
+        options: ["Left lane", "Right lane", "Center lane", "Emergency lane"],
+        correctAnswer: 1
+      },
+      {
+        question: "Who has the right of way inside a roundabout?",
+        options: ["Entering vehicles", "Vehicles already inside", "Pedestrians", "Cyclists"],
+        correctAnswer: 1
+      }
+    ]
+  },
+  {
+    id: "module-5",
+    title: "Parking & Special Driving Rules",
+    content: `Ontario Rule:
+- Stop for flashing red lights on a school bus.
+- Pull over and stop for emergency vehicles with sirens.
+
+Winter Driving Laws:
+- Winter tires are highly recommended but not mandatory.`,
+    duration: 6,
+    quiz: [
+      {
+        question: "What should you do when you see a school bus with flashing red lights?",
+        options: ["Slow down", "Stop", "Drive carefully", "Keep going"],
+        correctAnswer: 1
+      }
+    ]
+  },
+  {
+    id: "module-6",
+    title: "Driving Under the Influence & Distracted Driving",
+    content: `Ontario Rule:
+- Zero tolerance for alcohol or cannabis for novice drivers and commercial drivers.
+- BAC Limit: 0.08% is a criminal offense; 0.05%–0.079% leads to suspension.
+
+Distracted Driving:
+- No handheld devices while driving.`,
+    duration: 7,
+    quiz: [
+      {
+        question: "What is the legal BAC limit in Ontario?",
+        options: ["0.05%", "0.08%", "0.1%", "0.02%"],
+        correctAnswer: 1
+      }
+    ]
+  },
+  {
+    id: "module-7",
+    title: "Licensing System & Insurance Requirements",
+    content: `Ontario Rule:
+- Graduated Licensing System: G1 → G2 → Full G.
+- No-fault insurance system—each driver's insurance covers their own damages.`,
+    duration: 6,
+    quiz: [
+      {
+        question: "Which license is the first step in the Ontario system?",
+        options: ["G1", "G2", "Full G", "Learner’s Permit"],
+        correctAnswer: 0
+      }
+    ]
+  },
+  {
+    id: "module-8",
+    title: "Public Transit & Sharing the Road",
+    content: `Ontario Rule:
+- Stop behind a streetcar when passengers are boarding.
+- Minimum 1-meter passing distance for cyclists.`,
+    duration: 5,
+    quiz: [
+      {
+        question: "How far should you stay from a cyclist when passing?",
+        options: ["1 meter", "2 meters", "3 meters", "No minimum"],
+        correctAnswer: 0
+      }
+    ]
+  },
+  {
+    id: "module-9",
+    title: "Unique Ontario Traffic Laws & Lesser-Known Rules",
+    content: `Ontario Rule:
+- Move Over Law: Change lanes or slow down for emergency vehicles.
+- HOV Lanes: Restricted to vehicles with at least two occupants during peak hours.`,
+    duration: 5,
+    quiz: [
+      {
+        question: "How many passengers are required for HOV lanes in Ontario?",
+        options: ["1", "2", "3", "4"],
+        correctAnswer: 1
+      }
+    ]
   }
 ];

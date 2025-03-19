@@ -39,6 +39,19 @@ export default function Navbar({ session }) {
             >
               About
             </Link>
+
+            {/* Back to Dashboard button (now styled consistently) */}
+            {session && (
+              <Link
+                to="/dashboard"
+                className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium ${
+                  location.pathname === '/dashboard' ? 'bg-gray-100' : ''
+                }`}
+              >
+                Course Content
+              </Link>
+            )}
+
             {!session ? (
               <>
                 <Link
