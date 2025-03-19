@@ -40,12 +40,23 @@ export default function Register() {
       });
 
       if (signUpError) throw signUpError;
-      
+
       if (user) {
+        const { error: paymentError } = await supabase
+          .from('user_payments') // <-- your table name
+          .upsert({
+            id: user.id,       // store the user's Supabase UUID
+            product_id: '1',   // or "tou-ride-module"
+            paid: false        // default to false
+          });
+
+        if (paymentError) {
+          console.error('Error creating user_payments record:', paymentError);
+        }
         navigate('/dashboard');
       }
-    } catch (error) {
-      setError(error.message);
+    } catch (err: any) {
+      setError(err.message || 'An error occurred during registration.');
     }
   };
 
