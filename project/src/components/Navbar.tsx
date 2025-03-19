@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Car, LogOut } from 'lucide-react';
+import { Car, LogOut, Trophy } from 'lucide-react';
 import { supabase, checkIsAdmin } from '../lib/supabase';
 import { useEffect, useState } from 'react';
 
@@ -69,6 +69,23 @@ export default function Navbar({ session }) {
               </>
             ) : (
               <div className="flex items-center space-x-4">
+                <Link
+                  to="/dashboard"
+                  className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium ${
+                    location.pathname === '/dashboard' ? 'bg-gray-100' : ''
+                  }`}
+                >
+                  Dashboard
+                </Link>
+                <Link
+                  to="/completion"
+                  className={`text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium flex items-center ${
+                    location.pathname === '/completion' ? 'bg-gray-100' : ''
+                  }`}
+                >
+                  <Trophy className="h-5 w-5 mr-1" />
+                  Progress
+                </Link>
                 {isAdmin && (
                   <Link
                     to="/admin"

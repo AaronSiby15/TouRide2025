@@ -1,8 +1,11 @@
 import React from 'react';
 import { Mail, Phone, Award, BookOpen, ClipboardList, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 
 const About = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="bg-gray-50 min-h-screen p-6">
             <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg p-8">
@@ -12,9 +15,9 @@ const About = () => {
                 <section className="mb-8 text-center">
                     <p className="text-lg text-gray-700">
                         TouRide is an educational web-based course designed to help tourists, immigrants, and newcomers
-                        familiarize themselves with Ontario’s traffic laws. Driving in a new country or province can be
+                        familiarize themselves with Ontario's traffic laws. Driving in a new country or province can be
                         challenging, especially with unfamiliar rules and road signs. TouRide simplifies this learning process,
-                        ensuring drivers gain the confidence and knowledge needed to navigate Ontario’s roads safely and legally.
+                        ensuring drivers gain the confidence and knowledge needed to navigate Ontario's roads safely and legally.
                     </p>
                 </section>
                 
@@ -89,7 +92,7 @@ const About = () => {
                         </div>
                         <div className="p-4 bg-gray-100 rounded-lg shadow-md">
                             <h3 className="font-bold">Do I need this course if I have an international license?</h3>
-                            <p>Yes, it’s beneficial for understanding Ontario's specific rules.</p>
+                            <p>Yes, it's beneficial for understanding Ontario's specific rules.</p>
                         </div>
                         <div className="p-4 bg-gray-100 rounded-lg shadow-md">
                             <h3 className="font-bold">Can I do this course as an Ontario resident/citizen?</h3>

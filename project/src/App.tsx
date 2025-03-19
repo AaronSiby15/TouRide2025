@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { supabase } from './lib/supabase';
+import { supabase } from './lib/supabaseClient';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -10,6 +10,7 @@ import CourseModule from './components/CourseModule';
 import AdminDashboard from './components/AdminDashboard';
 import AdminRoute from './components/AdminRoute';
 import About from './components/About'; // Import the About component
+import { CompletionPage } from './components/CompletionPage';
 import { Session } from '@supabase/supabase-js';
 
 function App() {
@@ -89,6 +90,10 @@ function App() {
                 <AdminDashboard />
               </AdminRoute>
             }
+          />
+          <Route
+            path="/completion"
+            element={session ? <CompletionPage /> : <Navigate to="/login" replace />}
           />
         </Routes>
       </div>
