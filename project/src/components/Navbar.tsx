@@ -31,7 +31,7 @@ export default function Navbar({ session }: NavbarProps) {
           <div className="flex">
             <Link to="/" className="flex items-center">
               <Car className="h-8 w-8 text-blue-600" />
-              <span className="ml-2 text-xl font-bold text-gray-900">TouRides</span>
+              <span className="ml-2 text-xl font-bold text-gray-900">TouRide</span>
             </Link>
           </div>
           <div className="flex items-center space-x-4">
