@@ -15,9 +15,18 @@ import PaymentSuccess from './components/PaymentSuccess';
 import PaymentFail from './components/PaymentFail';
 import { Session } from '@supabase/supabase-js';
 import { Mail, Phone, Award, BookOpen, ClipboardList, Star } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
   const [session, setSession] = useState<Session | null>(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // animation duration in ms
+      once: true     // animate only once while scrolling down
+    });
+  }, []);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -80,7 +89,7 @@ function App() {
                     <section className="mb-8">
                       <h2 className="text-2xl font-semibold text-gray-800 mb-4">How It Works</h2>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-blue-50 rounded-lg p-6 shadow-md">
+                        <div className="bg-blue-50 rounded-lg p-6 shadow-md" data-aos="fade-up">
                           <BookOpen className="text-blue-600 w-8 h-8 mb-4" />
                           <h3 className="font-bold text-xl mb-2">Learn</h3>
                           <p className="text-gray-700">
@@ -88,14 +97,14 @@ function App() {
                             Ontario's traffic laws, road signs, and best driving practices.
                           </p>
                         </div>
-                        <div className="bg-blue-50 rounded-lg p-6 shadow-md">
+                        <div className="bg-blue-50 rounded-lg p-6 shadow-md" data-aos="fade-up" data-aos-delay="100">
                           <ClipboardList className="text-blue-600 w-8 h-8 mb-4" />
                           <h3 className="font-bold text-xl mb-2">Test Your Knowledge</h3>
                           <p className="text-gray-700">
                             Complete interactive quizzes to reinforce key concepts.
                           </p>
                         </div>
-                        <div className="bg-blue-50 rounded-lg p-6 shadow-md">
+                        <div className="bg-blue-50 rounded-lg p-6 shadow-md" data-aos="fade-up" data-aos-delay="200">
                           <Award className="text-blue-600 w-8 h-8 mb-4" />
                           <h3 className="font-bold text-xl mb-2">Get Certified</h3>
                           <p className="text-gray-700">
@@ -103,7 +112,7 @@ function App() {
                             Transportation of Ontario (MTO).
                           </p>
                         </div>
-                        <div className="bg-blue-50 rounded-lg p-6 shadow-md">
+                        <div className="bg-blue-50 rounded-lg p-6 shadow-md" data-aos="fade-up" data-aos-delay="300">
                           <Star className="text-blue-600 w-8 h-8 mb-4" />
                           <h3 className="font-bold text-xl mb-2">Unlock Discounts</h3>
                           <p className="text-gray-700">
