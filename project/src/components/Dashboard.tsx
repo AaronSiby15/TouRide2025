@@ -63,7 +63,7 @@ export default function Dashboard() {
       const { data, error } = await supabase
         .from('user_payments') // your table name
         .select('paid')
-        .eq('id', user.id)      // matching user’s UUID
+        .eq('id', user.id)      // matching user's UUID
         .eq('product_id', '1')  // or your product
         .single();
 
@@ -130,7 +130,6 @@ export default function Dashboard() {
                     <Lock className="h-6 w-6 text-gray-400" />
                   ) : null}
                 </div>
-                <p className="text-gray-600 mb-4">{module.content}</p>
                 <div className="text-sm text-gray-500 mb-4">
                   Duration: {module.duration} minutes
                 </div>
