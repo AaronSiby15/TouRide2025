@@ -56,7 +56,19 @@ const moduleImages = {
   highway: '/highway.png',
   emergencyvehicle: '/emergencyvehicle.png',
   school: '/school.png',
-  nightdrive: '/night drive.png'
+  nightdrive: '/night drive.png',
+  impairement: '/impairement.png',
+  distracteddriving: '/distracteddriving.png',
+  fatigue: '/fatigue.png',
+  driving: '/driving.png',
+  insurance: '/insurance.png',
+  license: '/license.png',
+  cyclist: '/cyclist.png',
+  pedestrian: '/pedestrian.png',
+  publictransportation: '/public-transportation.png',
+  moveover: '/moveover.png',
+  roundabout: '/roundabout.png',
+  schoolzones: '/school-zones.png'
 };
 
 export default function CourseModule() {

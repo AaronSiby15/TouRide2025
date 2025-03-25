@@ -470,6 +470,8 @@ Key Topics:
   • Criminal record
   • Increased insurance rates
 
+[IMAGE: impairement]
+
 2. Distracted Driving Laws
 - Prohibited activities while driving:
   • Using handheld devices
@@ -486,17 +488,26 @@ Key Topics:
   • Demerit points
   • License suspension
 
+[IMAGE: distracteddriving]
+
 3. Fatigue Management
 - Signs of driver fatigue:
   • Difficulty focusing
   • Heavy eyelids
   • Drifting between lanes
-  • Missing exits or turns
-- Prevention strategies:
-  • Regular rest breaks
-  • Proper sleep before driving
-  • Avoid driving at peak fatigue times
-  • Share driving on long trips`,
+  • Missing exits
+- Fatigue prevention strategies:
+  • Get adequate sleep before driving
+  • Take breaks every 2 hours
+  • Share driving on long trips
+  • Avoid driving at times you'd normally sleep
+- When to stop:
+  • When you catch yourself nodding off
+  • When you can't remember the last few minutes
+  • When you keep yawning or rubbing eyes
+  • When your reactions feel slow
+
+[IMAGE: fatigue]`,
     duration: 15,
     quiz: [
       {
@@ -562,6 +573,8 @@ Key Topics:
 - Mandatory waiting periods between levels
 - Required testing at each stage
 
+[IMAGE: license]
+
 2. Insurance Requirements
 - Mandatory insurance coverage:
   • Third-party liability
@@ -577,6 +590,8 @@ Key Topics:
   • Annual mileage
   • Location
 
+[IMAGE: insurance]
+
 3. License Maintenance
 - Renewal requirements:
   • Vision tests
@@ -589,7 +604,9 @@ Key Topics:
 - Medical fitness requirements:
   • Regular testing for seniors
   • Medical condition reporting
-  • Vision standards`,
+  • Vision standards
+
+[IMAGE: driving]`,
     duration: 15,
     quiz: [
       {
@@ -653,6 +670,8 @@ Key Topics:
   • Reduce speed when passing
   • Watch for hand signals
 
+[IMAGE: cyclist]
+
 2. Pedestrian Safety
 - Pedestrian right of way:
   • At crosswalks
@@ -667,6 +686,8 @@ Key Topics:
   • Bad weather
   • Night time
 
+[IMAGE: pedestrian]
+
 3. Public Transit and Large Vehicles
 - Buses and streetcars:
   • Stop when doors open
@@ -679,7 +700,9 @@ Key Topics:
 - Emergency vehicles:
   • Pull over and stop
   • Clear intersections
-  • Follow from safe distance`,
+  • Follow from safe distance
+
+[IMAGE: publictransportation]`,
     duration: 15,
     quiz: [
       {
@@ -740,6 +763,8 @@ Key Topics:
   • Time restrictions
   • Permitted vehicles
 
+[IMAGE: moveover]
+
 2. Complex Intersections
 - Roundabouts:
   • Yield to vehicles inside
@@ -755,6 +780,8 @@ Key Topics:
   • Follow proper paths
   • Watch for other vehicles
 
+[IMAGE: roundabout]
+
 3. Special Zones
 - Construction zones:
   • Reduced speeds
@@ -768,7 +795,9 @@ Key Topics:
 - Toll roads and express lanes:
   • Payment methods
   • Access points
-  • Special rules`,
+  • Special rules
+
+[IMAGE: schoolzones]`,
     duration: 15,
     quiz: [
       {
