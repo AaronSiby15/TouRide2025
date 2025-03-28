@@ -87,7 +87,7 @@ export default function Navbar({ session }: NavbarProps) {
                     }`}
                 >
                   <Trophy className="h-5 w-5 mr-1" />
-                  Progress
+                  Certificate
                 </Link>
 
                 <Link

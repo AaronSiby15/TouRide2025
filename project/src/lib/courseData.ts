@@ -50,7 +50,7 @@ Key Topics:
 - Special speed limits for trucks and buses
 
 [IMAGE: speed_limits]`,
-    duration: 15,
+    duration: 8,
     videoUrl: "https://youtu.be/Ue4UcsZnEv0?si=gqa79GYyCIMARmwv&t=378",
     quiz: [
       {
@@ -129,7 +129,7 @@ Key Topics:
   • Consider vehicle stopping distance
 
 [IMAGE: safedistance]`,
-    duration: 15,
+    duration: 8,
     videoUrl: "https://youtu.be/Ue4UcsZnEv0?si=gqa79GYyCIMARmwv&t=378",
     quiz: [
       {
@@ -223,7 +223,7 @@ Key Topics:
   • Missing exits or turns
 
 [IMAGE: impaireddriving]`,
-    duration: 15,
+    duration: 8,
     videoUrl: "https://youtu.be/pzVDhGjMH9g?si=45SuS63prLP7JihL&t=103",
     quiz: [
       {
@@ -317,7 +317,7 @@ Key Topics:
   • Watch for workers
 
 [IMAGE: workhighway]`,
-    duration: 15,
+    duration: 8,
     quiz: [
       {
         question: "What is the primary purpose of the left lane on highways?",
@@ -404,7 +404,7 @@ Key Topics:
   • Keep windshield clean
 
 [IMAGE: nightdrive]`,
-    duration: 15,
+    duration: 8,
     videoUrl: "https://youtu.be/pzVDhGjMH9g?si=45SuS63prLP7JihL&t=103",
     quiz: [
       {
@@ -508,7 +508,7 @@ Key Topics:
   • When your reactions feel slow
 
 [IMAGE: fatigue]`,
-    duration: 15,
+    duration: 8,
     quiz: [
       {
         question: "What is the criminal offense BAC limit in Canada?",
@@ -607,7 +607,7 @@ Key Topics:
   • Vision standards
 
 [IMAGE: driving]`,
-    duration: 15,
+    duration: 8,
     quiz: [
       {
         question: "Which license is the first step in Ontario's graduated licensing system?",
@@ -703,7 +703,7 @@ Key Topics:
   • Follow from safe distance
 
 [IMAGE: publictransportation]`,
-    duration: 15,
+    duration: 8,
     quiz: [
       {
         question: "What is the minimum safe passing distance for cyclists?",
@@ -798,7 +798,7 @@ Key Topics:
   • Special rules
 
 [IMAGE: schoolzones]`,
-    duration: 15,
+    duration: 8,
     quiz: [
       {
         question: "What is required in HOV lanes during peak hours?",

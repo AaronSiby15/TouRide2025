@@ -139,10 +139,10 @@ export default function CourseModule() {
     const correctAnswers = currentModule.quiz.reduce((acc: number, q, index) => {
       return acc + (selectedAnswers[index] === q.correctAnswer ? 1 : 0);
     }, 0);
-    
+
     const passThreshold = currentModule.quiz.length * 0.7;
     const passed = correctAnswers >= passThreshold;
-    
+
     setQuizPassed(passed);
     setQuizSubmitted(true);
 
@@ -169,20 +169,20 @@ export default function CourseModule() {
     const lines = content.split('\n');
     let currentSection: string | null = null;
     let sectionContent: React.ReactNode[] = [];
-    
+
     const result = lines.map((line, index) => {
       if (line.match(/^\d\./)) { // Main section headers
         const prevSection = currentSection;
         const prevContent = [...sectionContent];
         currentSection = line.split('. ')[1];
         sectionContent = [];
-        
+
         const icon = {
           'Winter Driving': <Snowflake className="h-6 w-6 text-blue-500" />,
           'Emergency Procedures': <AlertTriangle className="h-6 w-6 text-orange-500" />,
           'Impaired Driving': <Car className="h-6 w-6 text-red-500" />
         }[currentSection] || <div className="h-6 w-6" />;
-        
+
         if (prevSection) {
           return (
             <ContentSection key={`section-${index}`} title={prevSection} icon={icon}>
@@ -301,7 +301,7 @@ export default function CourseModule() {
           ) : (
             <div className="space-y-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Module Quiz</h2>
-              
+
               {currentModule.quiz.map((question, qIndex) => (
                 <div key={qIndex} className="bg-gray-50 rounded-lg p-6">
                   <p className="text-lg font-medium text-gray-900 mb-4">
@@ -311,11 +311,10 @@ export default function CourseModule() {
                     {question.options.map((option, aIndex) => (
                       <label
                         key={aIndex}
-                        className={`flex items-center p-4 rounded-lg border transition-all ${
-                          selectedAnswers[qIndex] === aIndex
-                            ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-500 ring-opacity-50'
-                            : 'border-gray-200 hover:bg-gray-50'
-                        } ${quizSubmitted ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                        className={`flex items-center p-4 rounded-lg border transition-all ${selectedAnswers[qIndex] === aIndex
+                          ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-500 ring-opacity-50'
+                          : 'border-gray-200 hover:bg-gray-50'
+                          } ${quizSubmitted ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                       >
                         <input
                           type="radio"
@@ -350,13 +349,13 @@ export default function CourseModule() {
                     )}
                     <p className={`font-medium ${quizPassed ? 'text-green-700' : 'text-red-700'}`}>
                       {quizPassed
-                        ? isLastModule 
+                        ? isLastModule
                           ? 'Congratulations! You have completed all modules! You now have a good understanding of Canadian driving rules and regulations.'
                           : 'Congratulations! You have passed the quiz and completed this module.'
                         : 'You did not pass the quiz. Please review the material and try again.'}
                     </p>
                   </div>
-                  
+
                   <button
                     onClick={() => navigate('/dashboard')}
                     className="mt-6 w-full bg-gray-100 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors font-medium"
