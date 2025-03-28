@@ -26,7 +26,7 @@ Key Topics:
 - Construction zone signs require extra caution and reduced speeds
 - Merge signs indicate lanes joining ahead
 
-[IMAGE: road_signs]
+[IMAGE: Roadsigns]
 
 2. Right-Hand Driving
 - In Canada, vehicles drive on the right side of the road

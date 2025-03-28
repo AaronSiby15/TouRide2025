@@ -3,6 +3,34 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { courseModules, Module } from '../lib/courseData';
 import { CheckCircle, AlertCircle, Clock, BookOpen, Snowflake, AlertTriangle, Car, ChevronRight, ImageIcon } from 'lucide-react';
+import Roadsigns from '../images/road-signs.png';
+import traffic_direction from '../images/traffic-direction.png' ;
+
+import speed_limits from '../images/speed-limits.png' ;
+import rightofway from '../images/rightofway.png' ;
+import parkingrules from '../images/parkingrules.png' ;
+import safedistance from '../images/safedistance.png' ;
+import impaireddriving from '../images/impaireddriving.png' ;
+import snowstorm from '../images/snowstorm.png' ;
+import emergencylight from '../images/emergencylight.png' ;
+import merge from '../images/merge.png' ;
+import workhighway from '../images/workhighway.png' ;
+import highway from '../images/highway.png' ;
+import emergencyvehicle from '../images/emergencyvehicle.png' ;
+import school from '../images/school.png' ;
+import nightdrive from '../images/night drive.png' ;
+import impairement from '../images/impairement.png' ;
+import distracteddriving from '../images/distracteddriving.png' ;
+import fatigue from '../images/fatigue.png' ;
+import driving from '../images/driving.png' ;
+import insurance from '../images/insurance.png' ;
+import license from '../images/license.png' ;
+import cyclist from '../images/cyclist.png' ;
+import pedestrian from '../images/pedestrian.png' ;
+import publictransportation from '../images/public-transportation.png' ;
+import moveover from '../images/moveover.png' ;
+import roundabout from '../images/roundabout.png' ;
+import schoolzones from '../images/school-zones.png'
 
 interface ContentSectionProps {
   title: string;
@@ -42,33 +70,33 @@ const SubBulletPoint: React.FC<BulletPointProps> = ({ children }) => (
 
 // Update image mapping with absolute paths from root
 const moduleImages = {
-  road_signs: '/road-signs.png',
-  traffic_direction: '/traffic-direction.png',
-  speed_limits: '/speed-limits.png',
-  rightofway: '/rightofway.png',
-  parkingrules: '/parkingrules.png',
-  safedistance: '/safedistance.png',
-  impaireddriving: '/impaireddriving.png',
-  snowstorm: '/snowstorm.png',
-  emergencylight: '/emergencylight.png',
-  merge: '/merge.png',
-  workhighway: '/workhighway.png',
-  highway: '/highway.png',
-  emergencyvehicle: '/emergencyvehicle.png',
-  school: '/school.png',
-  nightdrive: '/night drive.png',
-  impairement: '/impairement.png',
-  distracteddriving: '/distracteddriving.png',
-  fatigue: '/fatigue.png',
-  driving: '/driving.png',
-  insurance: '/insurance.png',
-  license: '/license.png',
-  cyclist: '/cyclist.png',
-  pedestrian: '/pedestrian.png',
-  publictransportation: '/public-transportation.png',
-  moveover: '/moveover.png',
-  roundabout: '/roundabout.png',
-  schoolzones: '/school-zones.png'
+  Roadsigns,
+  traffic_direction,
+  speed_limits,
+  rightofway,
+  parkingrules,
+  safedistance,
+  impaireddriving,
+  snowstorm,
+  emergencylight,
+  merge,
+  workhighway,
+  highway,
+  emergencyvehicle,
+  school,
+  nightdrive,
+  impairement,
+  distracteddriving,
+  fatigue,
+  driving,
+  insurance,
+  license,
+  cyclist,
+  pedestrian,
+  publictransportation,
+  moveover,
+  roundabout,
+  schoolzones
 };
 
 export default function CourseModule() {
@@ -111,10 +139,10 @@ export default function CourseModule() {
     const correctAnswers = currentModule.quiz.reduce((acc: number, q, index) => {
       return acc + (selectedAnswers[index] === q.correctAnswer ? 1 : 0);
     }, 0);
-    
+
     const passThreshold = currentModule.quiz.length * 0.7;
     const passed = correctAnswers >= passThreshold;
-    
+
     setQuizPassed(passed);
     setQuizSubmitted(true);
 
@@ -141,20 +169,20 @@ export default function CourseModule() {
     const lines = content.split('\n');
     let currentSection: string | null = null;
     let sectionContent: React.ReactNode[] = [];
-    
+
     const result = lines.map((line, index) => {
       if (line.match(/^\d\./)) { // Main section headers
         const prevSection = currentSection;
         const prevContent = [...sectionContent];
         currentSection = line.split('. ')[1];
         sectionContent = [];
-        
+
         const icon = {
           'Winter Driving': <Snowflake className="h-6 w-6 text-blue-500" />,
           'Emergency Procedures': <AlertTriangle className="h-6 w-6 text-orange-500" />,
           'Impaired Driving': <Car className="h-6 w-6 text-red-500" />
         }[currentSection] || <div className="h-6 w-6" />;
-        
+
         if (prevSection) {
           return (
             <ContentSection key={`section-${index}`} title={prevSection} icon={icon}>
@@ -273,7 +301,7 @@ export default function CourseModule() {
           ) : (
             <div className="space-y-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Module Quiz</h2>
-              
+
               {currentModule.quiz.map((question, qIndex) => (
                 <div key={qIndex} className="bg-gray-50 rounded-lg p-6">
                   <p className="text-lg font-medium text-gray-900 mb-4">
@@ -283,11 +311,10 @@ export default function CourseModule() {
                     {question.options.map((option, aIndex) => (
                       <label
                         key={aIndex}
-                        className={`flex items-center p-4 rounded-lg border transition-all ${
-                          selectedAnswers[qIndex] === aIndex
-                            ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-500 ring-opacity-50'
-                            : 'border-gray-200 hover:bg-gray-50'
-                        } ${quizSubmitted ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                        className={`flex items-center p-4 rounded-lg border transition-all ${selectedAnswers[qIndex] === aIndex
+                          ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-500 ring-opacity-50'
+                          : 'border-gray-200 hover:bg-gray-50'
+                          } ${quizSubmitted ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                       >
                         <input
                           type="radio"
@@ -322,13 +349,13 @@ export default function CourseModule() {
                     )}
                     <p className={`font-medium ${quizPassed ? 'text-green-700' : 'text-red-700'}`}>
                       {quizPassed
-                        ? isLastModule 
+                        ? isLastModule
                           ? 'Congratulations! You have completed all modules! You now have a good understanding of Canadian driving rules and regulations.'
                           : 'Congratulations! You have passed the quiz and completed this module.'
                         : 'You did not pass the quiz. Please review the material and try again.'}
                     </p>
                   </div>
-                  
+
                   <button
                     onClick={() => navigate('/dashboard')}
                     className="mt-6 w-full bg-gray-100 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors font-medium"
