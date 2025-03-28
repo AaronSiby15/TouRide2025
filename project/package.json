@@ -1,10 +1,13 @@
 {
   "name": "touride",
+  "homepage": "https://aaronsiby15.github.io/TouRide2025/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "start": "vite",
+    "predploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -21,7 +24,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.22.2",
-    "stripe": "^17.7.0"
+    "stripe": "^17.7.0",
+    "vue-stripe-js": "^2.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
@@ -34,6 +38,7 @@
     "eslint": "^9.9.1",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",
+    "gh-pages": "^6.3.0",
     "globals": "^15.9.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",

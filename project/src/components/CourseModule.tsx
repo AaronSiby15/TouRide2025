@@ -3,6 +3,34 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { courseModules, Module } from '../lib/courseData';
 import { CheckCircle, AlertCircle, Clock, BookOpen, Snowflake, AlertTriangle, Car, ChevronRight, ImageIcon } from 'lucide-react';
+import Roadsigns from '../images/road-signs.png';
+import traffic_direction from '../images/traffic-direction.png' ;
+
+import speed_limits from '../images/speed-limits.png' ;
+import rightofway from '../images/rightofway.png' ;
+import parkingrules from '../images/parkingrules.png' ;
+import safedistance from '../images/safedistance.png' ;
+import impaireddriving from '../images/impaireddriving.png' ;
+import snowstorm from '../images/snowstorm.png' ;
+import emergencylight from '../images/emergencylight.png' ;
+import merge from '../images/merge.png' ;
+import workhighway from '../images/workhighway.png' ;
+import highway from '../images/highway.png' ;
+import emergencyvehicle from '../images/emergencyvehicle.png' ;
+import school from '../images/school.png' ;
+import nightdrive from '../images/night drive.png' ;
+import impairement from '../images/impairement.png' ;
+import distracteddriving from '../images/distracteddriving.png' ;
+import fatigue from '../images/fatigue.png' ;
+import driving from '../images/driving.png' ;
+import insurance from '../images/insurance.png' ;
+import license from '../images/license.png' ;
+import cyclist from '../images/cyclist.png' ;
+import pedestrian from '../images/pedestrian.png' ;
+import publictransportation from '../images/public-transportation.png' ;
+import moveover from '../images/moveover.png' ;
+import roundabout from '../images/roundabout.png' ;
+import schoolzones from '../images/school-zones.png'
 
 interface ContentSectionProps {
   title: string;
@@ -42,33 +70,33 @@ const SubBulletPoint: React.FC<BulletPointProps> = ({ children }) => (
 
 // Update image mapping with absolute paths from root
 const moduleImages = {
-  road_signs: '/road-signs.png',
-  traffic_direction: '/traffic-direction.png',
-  speed_limits: '/speed-limits.png',
-  rightofway: '/rightofway.png',
-  parkingrules: '/parkingrules.png',
-  safedistance: '/safedistance.png',
-  impaireddriving: '/impaireddriving.png',
-  snowstorm: '/snowstorm.png',
-  emergencylight: '/emergencylight.png',
-  merge: '/merge.png',
-  workhighway: '/workhighway.png',
-  highway: '/highway.png',
-  emergencyvehicle: '/emergencyvehicle.png',
-  school: '/school.png',
-  nightdrive: '/night drive.png',
-  impairement: '/impairement.png',
-  distracteddriving: '/distracteddriving.png',
-  fatigue: '/fatigue.png',
-  driving: '/driving.png',
-  insurance: '/insurance.png',
-  license: '/license.png',
-  cyclist: '/cyclist.png',
-  pedestrian: '/pedestrian.png',
-  publictransportation: '/public-transportation.png',
-  moveover: '/moveover.png',
-  roundabout: '/roundabout.png',
-  schoolzones: '/school-zones.png'
+  Roadsigns,
+  traffic_direction,
+  speed_limits,
+  rightofway,
+  parkingrules,
+  safedistance,
+  impaireddriving,
+  snowstorm,
+  emergencylight,
+  merge,
+  workhighway,
+  highway,
+  emergencyvehicle,
+  school,
+  nightdrive,
+  impairement,
+  distracteddriving,
+  fatigue,
+  driving,
+  insurance,
+  license,
+  cyclist,
+  pedestrian,
+  publictransportation,
+  moveover,
+  roundabout,
+  schoolzones
 };
 
 export default function CourseModule() {
