@@ -171,11 +171,11 @@ function App() {
                       <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
                         <div className="flex items-center">
                           <Mail className="text-blue-600 w-6 h-6 mr-2" />
-                          <a href="mailto:email@example.com" className="text-blue-600 hover:underline">email@example.com</a>
+                          <a href="mailto:ameer@ameerz.com" className="text-blue-600 hover:underline">ameer@ameerz.com</a>
                         </div>
                         <div className="flex items-center">
                           <Phone className="text-blue-600 w-6 h-6 mr-2" />
-                          <a href="tel:+11234567890" className="text-blue-600 hover:underline">+1 (123) 456-7890</a>
+                          <a href="tel:+12894121093" className="text-blue-600 hover:underline">+1 (289) 412-1093</a>
                         </div>
                       </div>
                       <p className="mt-4 text-gray-700 font-semibold">
