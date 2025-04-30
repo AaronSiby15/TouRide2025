@@ -5,10 +5,8 @@ import { courseModules } from '../lib/courseData';
 import { CheckCircle, Lock } from 'lucide-react';
 
 export default function Dashboard() {
-  const [userProgress, setUserProgress] = useState({});
+  const [userProgress, setUserProgress] = useState<Record<string, boolean>>({});
   const [loading, setLoading] = useState(true);
-
-  // Tracks payment status for product #1
   const [paymentStatus, setPaymentStatus] = useState<'loading' | 'paid' | 'unpaid'>('loading');
 
   useEffect(() => {
@@ -16,32 +14,26 @@ export default function Dashboard() {
     checkPaymentStatus();
   }, []);
 
+  // Fetch which modules the user has completed
   const fetchUserProgress = async () => {
     try {
       const { data: progress } = await supabase
         .from('user_progress')
-        .select('*');
+        .select('module_id, completed');
 
-      const progressMap = {};
+      const progressMap: Record<string, boolean> = {};
       progress?.forEach(p => {
-        progressMap[p.module_id] = p.completed;
+        if (p.module_id) progressMap[p.module_id] = !!p.completed;
       });
 
       setUserProgress(progressMap);
-      setLoading(false);
     } catch (error) {
       console.error('Error fetching progress:', error);
+    } finally {
       setLoading(false);
     }
   };
 
-  const canAccessModule = (moduleIndex) => {
-    if (moduleIndex === 0) return true;
-    const previousModule = courseModules[moduleIndex - 1];
-    return userProgress[previousModule.id];
-  };
-
-  // 2. Check if user paid for product #1 in 'user_payments'
   const checkPaymentStatus = async () => {
     try {
       const {
@@ -49,29 +41,22 @@ export default function Dashboard() {
         error: userError,
       } = await supabase.auth.getUser();
 
-      if (userError) {
-        console.error('Error fetching user:', userError);
-        setPaymentStatus('unpaid');
-        return;
-      }
-      if (!user) {
-        // No user => not paid
+      if (userError || !user) {
         setPaymentStatus('unpaid');
         return;
       }
 
       const { data, error } = await supabase
-        .from('user_payments') // your table name
+        .from('user_payments')
         .select('paid')
-        .eq('id', user.id)      // matching user's UUID
-        .eq('product_id', '1')  // or your product
+        .eq('id', user.id)
+        .eq('product_id', '1')
         .single();
 
-      if (error) {
-        console.error('Error fetching payment record:', error);
+      if (error || data?.paid !== true) {
         setPaymentStatus('unpaid');
       } else {
-        setPaymentStatus(data?.paid ? 'paid' : 'unpaid');
+        setPaymentStatus('paid');
       }
     } catch (err) {
       console.error('Error checking payment status:', err);
@@ -79,19 +64,24 @@ export default function Dashboard() {
     }
   };
 
-  // 3. Show spinner while loading
+  // Module 1 (index 0) is always open and  Modules 2+ require payment, then sequential completion
+  const canAccessModule = (moduleIndex: number) => {
+    if (moduleIndex === 0) {
+      return true;
+    }
+    if (paymentStatus !== 'paid') {
+      return false;
+    }
+    // after paying, must complete previous
+    const prevId = courseModules[moduleIndex - 1].id;
+    return !!userProgress[prevId];
+  };
+
+  // show spinner until both progress & paymentStatus have loaded
   if (loading || paymentStatus === 'loading') {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600" />
       </div>
     );
   }
@@ -105,7 +95,10 @@ export default function Dashboard() {
         </div>
       ) : (
         <div className="p-4 bg-red-100 text-red-700 rounded mb-6">
-          TouRide Module Payment Unsuccessful
+          Please purchase {' '}
+          <Link to="/payment" className="font-semibold text-blue-600 underline hover:text-blue-800">
+            TouRide Module
+          </Link>{' '} TouRide Module to unlock further content (Module 2-9)
         </div>
       )}
 
@@ -113,14 +106,11 @@ export default function Dashboard() {
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {courseModules.map((module, index) => {
-          const isCompleted = userProgress[module.id];
+          const isCompleted = !!userProgress[module.id];
           const isAccessible = canAccessModule(index);
 
           return (
-            <div
-              key={module.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
-            >
+            <div key={module.id} className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-xl font-semibold text-gray-900">{module.title}</h2>
@@ -148,7 +138,7 @@ export default function Dashboard() {
                     disabled
                     className="block w-full py-2 px-4 rounded-md bg-gray-100 text-gray-400 cursor-not-allowed"
                   >
-                    Complete Previous Module First
+                    {index === 0 ? 'Start Module' : 'Locked'}
                   </button>
                 )}
               </div>
