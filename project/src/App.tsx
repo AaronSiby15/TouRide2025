@@ -8,11 +8,9 @@ import Dashboard from './components/Dashboard';
 import CourseModule from './components/CourseModule';
 import AdminDashboard from './components/AdminDashboard';
 import AdminRoute from './components/AdminRoute';
-import About from './components/About'; // Import the About component
+import About from './components/About';
 import { CompletionPage } from './components/CompletionPage';
 import PaymentPage from './components/PaymentPage';
-import PaymentSuccess from './components/PaymentSuccess';
-import PaymentFail from './components/PaymentFail';
 import { Session } from '@supabase/supabase-js';
 import { Mail, Phone, Award, BookOpen, ClipboardList, Star } from 'lucide-react';
 import AOS from 'aos';
@@ -23,8 +21,8 @@ function App() {
 
   useEffect(() => {
     AOS.init({
-      duration: 800, // animation duration in ms
-      once: true     // animate only once while scrolling down
+      duration: 800,
+      once: true
     });
   }, []);
 
@@ -199,10 +197,6 @@ function App() {
             path="/payment"
             element={session ? <PaymentPage /> : <Navigate to="/login" replace />}
           />
-          {/* Stripe Callback Routes (public) */}
-          <Route path="/payment-success" element={<PaymentSuccess />} />
-          <Route path="/payment-fail" element={<PaymentFail />} />
-
           <Route
             path="/login"
             element={!session ? <Login /> : <Navigate to="/dashboard" replace />}
