@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { courseModules } from '../lib/courseData';
 import { CheckCircle, Lock } from 'lucide-react';
+import ChatBot from './ChatBot';
 
 export default function Dashboard() {
   const [userProgress, setUserProgress] = useState<Record<string, boolean>>({});
@@ -146,6 +147,8 @@ export default function Dashboard() {
           );
         })}
       </div>
+      {/* ChatBot */}
+      <ChatBot />
     </div>
   );
 }
