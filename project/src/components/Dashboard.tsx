@@ -77,15 +77,6 @@ export default function Dashboard() {
     return !!userProgress[prevId];
   };
 
-<<<<<<< HEAD
-  // Check if all modules are completed
-  const isCourseCompleted = () => {
-    return courseModules.every(module => userProgress[module.id]);
-  };
-
-  // show spinner until both progress & paymentStatus have loaded
-=======
->>>>>>> 92ca750c24f921bab02e1cb41f7511e99b7dc2e2
   if (loading || paymentStatus === 'loading') {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -98,43 +89,6 @@ export default function Dashboard() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="text-3xl font-bold text-gray-900 mb-8">Your Learning Journey</h1>
 
-<<<<<<< HEAD
-      {/* Course Completion Message */}
-      {isCourseCompleted() && (
-        <div className="mb-8 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg shadow-lg border border-green-200">
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-2xl font-bold text-green-700 mb-2">🎉 Congratulations! 🎉</h2>
-              <p className="text-lg text-gray-700">
-                You have successfully completed all TouRide modules! Your certificate is ready.
-              </p>
-            </div>
-            <Link
-              to="/completion"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              View Certificate
-            </Link>
-          </div>
-        </div>
-      )}
-
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {courseModules.map((module, index) => {
-          const isCompleted = !!userProgress[module.id];
-          const isAccessible = canAccessModule(index);
-
-          return (
-            <div key={module.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl font-semibold text-gray-900">{module.title}</h2>
-                  {isCompleted ? (
-                    <CheckCircle className="h-6 w-6 text-green-500" />
-                  ) : !isAccessible ? (
-                    <Lock className="h-6 w-6 text-gray-400" />
-                  ) : null}
-=======
       <div className="relative">
         {/* Overlay and grid for all modules */}
         {paymentStatus !== 'paid' && (
@@ -144,7 +98,6 @@ export default function Dashboard() {
                 <svg xmlns='http://www.w3.org/2000/svg' className='h-7 w-7 text-blue-500 mb-1' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 17v2m6-6V9a6 6 0 10-12 0v4M5 11h14a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2z' /></svg>
                 <div className="text-center text-lg font-semibold text-gray-800">
                   Unlock all modules by purchasing the <span className="text-blue-600 font-bold">TouRide Modules</span>.
->>>>>>> 92ca750c24f921bab02e1cb41f7511e99b7dc2e2
                 </div>
               </div>
               <Link
