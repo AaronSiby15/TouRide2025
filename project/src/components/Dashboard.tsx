@@ -73,23 +73,7 @@ export default function Dashboard() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Payment Alert */}
-      {paymentStatus === 'paid' ? (
-        <div className="p-4 bg-green-100 text-green-700 rounded mb-6">
-          TouRide Module Payment Successful
-        </div>
-      ) : (
-        <div className="p-4 bg-red-100 text-red-700 rounded mb-6">
-          Please purchase{' '}
-          <Link
-            to="/payment"
-            className="font-semibold text-blue-600 underline hover:text-blue-800"
-          >
-            TouRide Module
-          </Link>{' '}
-          to unlock further content (Module 2–9).
-        </div>
-      )}
+      
 
       <h1 className="text-3xl font-bold text-gray-900 mb-8">Your Learning Journey</h1>
 
