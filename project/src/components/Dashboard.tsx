@@ -93,6 +93,28 @@ export default function Dashboard() {
 
       <h1 className="text-3xl font-bold text-gray-900 mb-8">Your Learning Journey</h1>
 
+      {/* If fully completed, show certificate CTA */}
+      {isCourseCompleted() && (
+        <section className="mb-8 p-6 bg-green-50 rounded-lg shadow-lg border border-green-200">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div>
+              <h2 className="text-2xl font-bold text-green-700 mb-2">
+                🎉 Congratulations! 🎉
+              </h2>
+              <p className="text-gray-700">
+                You've completed all modules. Your certificate is ready.
+              </p>
+            </div>
+            <Link
+              to="/completion"
+              className="mt-4 md:mt-0 bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition"
+            >
+              View Certificate
+            </Link>
+          </div>
+        </section>
+      )}
+
       <div className="relative">
         {/* Lock overlay when not paid */}
         {paymentStatus !== 'paid' && (
@@ -177,28 +199,6 @@ export default function Dashboard() {
           })}
         </div>
       </div>
-
-      {/* If fully completed, show certificate CTA */}
-      {isCourseCompleted() && (
-        <section className="mt-12 p-6 bg-green-50 rounded-lg shadow-lg border border-green-200">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div>
-              <h2 className="text-2xl font-bold text-green-700 mb-2">
-                🎉 Congratulations! 🎉
-              </h2>
-              <p className="text-gray-700">
-                You’ve completed all modules. Your certificate is ready.
-              </p>
-            </div>
-            <Link
-              to="/completion"
-              className="mt-4 md:mt-0 bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition"
-            >
-              View Certificate
-            </Link>
-          </div>
-        </section>
-      )}
 
       {/* Embedded AI Chat Bot */}
       <div className="mt-12">
