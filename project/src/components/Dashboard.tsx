@@ -77,6 +77,11 @@ export default function Dashboard() {
     return !!userProgress[prevId];
   };
 
+  // Check if all modules are completed
+  const isCourseCompleted = () => {
+    return courseModules.every(module => userProgress[module.id]);
+  };
+
   // show spinner until both progress & paymentStatus have loaded
   if (loading || paymentStatus === 'loading') {
     return (
@@ -103,6 +108,26 @@ export default function Dashboard() {
       )}
 
       <h1 className="text-3xl font-bold text-gray-900 mb-8">Your Learning Journey</h1>
+
+      {/* Course Completion Message */}
+      {isCourseCompleted() && (
+        <div className="mb-8 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg shadow-lg border border-green-200">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-2xl font-bold text-green-700 mb-2">🎉 Congratulations! 🎉</h2>
+              <p className="text-lg text-gray-700">
+                You have successfully completed all TouRide modules! Your certificate is ready.
+              </p>
+            </div>
+            <Link
+              to="/completion"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              View Certificate
+            </Link>
+          </div>
+        </div>
+      )}
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {courseModules.map((module, index) => {
