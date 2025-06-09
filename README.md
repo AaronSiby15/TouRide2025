@@ -6,23 +6,57 @@ TouRide is an educational web platform designed to help **tourists**, **new immi
 
 ---
 
-## 🌐 Take a Look!
+## 🌐 Take a Look For Yourself!
 
-> https://aaronsiby15.github.io/TouRide2025/
+> Link: https://aaronsiby15.github.io/TouRide2025/
 
 ---
 
 ## 📚 Key Features
 
-- 🛣 **Interactive Course Modules** on Ontario road signs, right-of-way, traffic penalties, and driver etiquette.
-- 📜 **Certificate of Completion** recognized by partnering insurance companies and rental agencies.
+- 🛣 **Interactive Course Modules** on Ontario road signs, right-of-way, special circumstances, and driver etiquette presented in a modern manner.
+- 📜 **Certificate of Completion** generated alongside a unique key to be presented to partnering insurance companies and rental agencies.
 - 📊 **User Progress Tracking** via Supabase (PostgreSQL backend).
-- 🔒 **Secure Login System** with real-time user analytics.
+- 🔒 **Secure Login System** with age requirement implementation.
 - 💳 **Stripe Payment Integration** to unlock all modules and certificate access.
+- 🤖 **AI Chatbot Support** implemented to answer user questions about the course and Ontario driving laws in general.
 - 📱 **Responsive Web App** built using modern frameworks for desktop and mobile.
 
 ---
 
+## Webapp Screenshots!
+
+### Main Menu 
+![# MainMenu](project/src/images/readmeimages/mainMenu.gif)
+
+### Create Account Page
+![# CreateAccount](project/src/images/readmeimages/createAccount.png)
+
+### Course Modules Page
+![# CousreMdodule](project/src/images/readmeimages/courseModules.png)
+
+### Payment Page
+![# CousreMdodule](project/src/images/readmeimages/paymentPage.png)
+
+### Module Content
+![# ModuleContent](project/src/images/readmeimages/moduleContent.png)
+
+### Module Quiz
+![# ModuleQuiz](project/src/images/readmeimages/moduleQuiz.png)
+
+### Certificate Page
+![# CertificatePage](src/model/assets/readmeImages/certificatePage.png)
+
+---
+
+## 💼 Who Is It For?
+
+- ✈️ **Tourists** renting a car for a road trip.
+- 🌍 **Newcomers** learning Canadian traffic rules for the first time.
+- 📦 **Immigrants** converting their international licenses to G1/G2/G.
+- 🎓 **ESL students** or newcomers in driving prep programs.
+
+---
 
 ## 🛠 Tech Stack
 
@@ -40,7 +74,7 @@ TouRide is an educational web platform designed to help **tourists**, **new immi
 
 ## 🧱 MVP Structure
 
-- **Home Page** – Introduction and navigation to the course.
+- **Home Page** – Introduction and navigation to the course (with animated scrolling).
 - **Login Page** – Secure user authentication.
 - **About Page** – Our mission, vision, and how TouRide helps.
 - **Content Page** – Modular lessons on Ontario traffic laws.
@@ -50,9 +84,7 @@ TouRide is an educational web platform designed to help **tourists**, **new immi
 
 ## 🧩 Planned Add-ons
 
-- 🧾 **Dynamic Payment Plans** for families, groups, or schools.
 - 🎥 **Video Lessons** with voiceover and subtitles.
-- 🔑 **Certificate Key System** for third-party verification.
 - 📊 **Admin Dashboard** for deeper analytics and system management.
 - 🌐 **Multilingual Support** for inclusivity.
 
@@ -66,16 +98,7 @@ TouRide is an educational web platform designed to help **tourists**, **new immi
 
 ---
 
-## 💼 Who Is It For?
-
-- ✈️ **Tourists** renting a car for a road trip.
-- 🌍 **Newcomers** learning Canadian traffic rules for the first time.
-- 📦 **Immigrants** converting their international licenses to G1/G2/G.
-- 🎓 **ESL students** or newcomers in driving prep programs.
-
----
-
-## 🧑‍💻 Getting Started (For Developers)
+## 🧑‍💻 Accessing (For Developers)
 
 ```bash
 # 1. Clone the repo
