@@ -26,7 +26,7 @@ TouRide is an educational web platform designed to help **tourists**, **new immi
 
 ## Webapp Screenshots!
 
-### Main Menu 
+### Main Menu GIF
 ![# MainMenu](project/src/images/readmeimages/mainMenu.gif)
 
 ### Create Account Page
