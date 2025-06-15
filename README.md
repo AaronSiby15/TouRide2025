@@ -98,6 +98,14 @@ TouRide is an educational web platform designed to help **tourists**, **new immi
 
 ---
 
+## Copyright (c) 2025 Ameerz
+
+This repostiory is intended for demonstration and educational purposes only. 
+You may view the code, but you may not copy, modify, distribute, or use 
+any part of this project in your own work without explicit permission.
+
+---
+
 ## 🧑‍💻 Accessing (For Developers)
 
 ```bash
@@ -114,3 +122,6 @@ cp .env.example .env
 
 # 4. Start the development server
 npm run dev
+
+
+
